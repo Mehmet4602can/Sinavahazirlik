@@ -1,0 +1,26 @@
+﻿@model Ogrenci
+
+<form asp-controller="Ogrenci" asp-action="Guncelle" method="post">
+    <input type="hidden" asp-for="OgrenciID" />
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label asp-for="OgrenciAdi"></label>
+        <input asp-for="OgrenciAdi" class="form-control" value="@Model.OgrenciAdi" />
+    </div>
+    <div class="form-group">
+        <label asp-for="OgrenciSoyadi"></label>
+        <input asp-for="OgrenciSoyadi" class="form-control" value="@Model.OgrenciSoyadi" />
+    </div>
+    <div class="form-group">
+        <label asp-for="SinifID"></label>
+        <select name="SinifID" class="form-control" asp-items="@(new SelectList(ViewBag.siniflistesi, "Value", "Text"))">
+            <option value="">
+                Bir Sınıf Seçiniz
+            </option>
+        </select>
+        
+    </div>
+    <div class="form-group" style="margin:10px 0px">
+        <button type="submit" class="btn btn-outline-success">Kaydet</button>
+    </div>
+</form>

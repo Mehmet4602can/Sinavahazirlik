@@ -1,0 +1,16 @@
+﻿@model Sinif
+
+<form asp-controller="Sinif" asp-action="Ekle" method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label asp-for="SinifAdi"></label>
+        <input asp-for="SinifAdi" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="SinifKodu"></label>
+        <input asp-for="SinifKodu" class="form-control" />
+    </div>
+    <div class="form-group" style="margin:10px 0px">
+        <button type="submit" class="btn btn-outline-success">Kaydet</button>
+    </div>
+</form>
